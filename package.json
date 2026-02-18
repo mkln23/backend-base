@@ -9,10 +9,10 @@
         "format:check": "prettier --check .",
         "lint": "eslint src --ext .ts",
         "lint:fix": "eslint src --ext .ts --fix",
-        "prepare": "if [ -d .git ]; then husky install; fi",
+        "prepare": "husky install",
         "deploy:check": "env-cmd -f .env.dev serverless info --stage dev --region us-east-1",
         "deploy:cd:dev": "serverless deploy --stage dev --region us-east-1",
-        "deploy:localk:dev": "env-cmd -f .env.dev serverless deploy --stage dev --region us-east-1"
+        "deploy:local:dev": "env-cmd -f .env.dev serverless deploy --stage dev --region us-east-1"
     },
     "author": "",
     "license": "ISC",
@@ -48,7 +48,7 @@
         "prettier": "^3.8.1",
         "serverless": "^3.40.0",
         "serverless-esbuild": "^1.57.0",
-        "serverless-offline": "^14.4.0",
+        "serverless-offline": "^12.0.4",
         "ts-node": "^10.9.2",
         "typescript": "^5.9.3"
     }
