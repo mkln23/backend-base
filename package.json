@@ -11,7 +11,8 @@
         "lint:fix": "eslint src --ext .ts --fix",
         "prepare": "if [ -d .git ]; then husky install; fi",
         "deploy:check": "env-cmd -f .env.dev serverless info --stage dev --region us-east-1",
-        "deploy:dev": "env-cmd -f .env.dev serverless deploy --stage dev --region us-east-1"
+        "deploy:cd:dev": "serverless deploy --stage dev --region us-east-1",
+        "deploy:localk:dev": "env-cmd -f .env.dev serverless deploy --stage dev --region us-east-1"
     },
     "author": "",
     "license": "ISC",
