@@ -1,0 +1,22 @@
+service: serverless-backend
+
+custom:
+    stage: ${opt:stage, 'local'}
+    region: ${opt:region, 'us-east-1'}
+
+provider:
+    name: aws
+    stage: ${self.custom.stage}
+    runtime: nodejs20.x
+    region: ${self.custom.region}
+
+plugins:
+    - serverless-offline
+
+functions:
+    hello:
+        handler: src/handlers/hello.handler
+        events:
+            - httpApi:
+                  path: /hello
+                  method: get
