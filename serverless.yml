@@ -1,5 +1,7 @@
 service: serverless-backend
 
+frameworkVersion: '3'
+
 custom:
     stage: ${opt:stage, 'local'}
     region: ${opt:region, 'us-east-1'}
