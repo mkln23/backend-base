@@ -11,12 +11,15 @@ custom:
         sourcemap: true
         target: node20
         platform: node
+    dotenv:
+        path: .env
 
 provider:
     name: aws
     stage: ${self.custom.stage}
     runtime: nodejs20.x
     region: ${self.custom.region}
+    environment: ${file(.env)}
 
 plugins:
     - serverless-offline
