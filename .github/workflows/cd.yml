@@ -13,7 +13,11 @@ jobs:
 
         env:
             # Secrets from GitHub
-            AWS_REGION: ${{ vars.AWS_REGION }}
+            REGION: ${{ vars.REGION }}
+            STAGE: ${{ vars.AWS_REGION }}
+            MAX_ATTEMPTS: ${{ vars.MAX_ATTEMPTS }}
+            LOG_LEVEL: ${{ vars.LOG_LEVEL }}
+            NODE_ENV: ${{ vars.NODE_ENV }}
 
             # Determine stage based on branch
             STAGE: ${{ github.ref_name == 'main' && 'prod' || 'dev' }}
@@ -39,7 +43,7 @@ jobs:
               with:
                   aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
                   aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-                  aws-region: ${{ vars.AWS_REGION }}
+                  aws-region: ${{ env.REGION }}
 
             - name: 🚀 Deploy to AWS with Serverless
               run: npm run deploy:cd:${{ env.STAGE }}
