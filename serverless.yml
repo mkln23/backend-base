@@ -21,6 +21,7 @@ provider:
 plugins:
     - serverless-offline
     - serverless-esbuild
+    - serverless-dotenv-plugin
 
 functions:
     hello:
