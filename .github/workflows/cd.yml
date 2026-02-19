@@ -14,7 +14,6 @@ jobs:
         env:
             # Secrets from GitHub
             REGION: ${{ vars.REGION }}
-            STAGE: ${{ vars.AWS_REGION }}
             MAX_ATTEMPTS: ${{ vars.MAX_ATTEMPTS }}
             LOG_LEVEL: ${{ vars.LOG_LEVEL }}
             NODE_ENV: ${{ vars.NODE_ENV }}
