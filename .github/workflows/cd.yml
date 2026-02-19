@@ -38,7 +38,7 @@ jobs:
               run: npm ci
 
             - name: Create .env file
-                run: |
+              run: |
                     echo "LOG_LEVEL=${{ vars.LOG_LEVEL }}" >> .env
                     echo "MAX_ATTEMPTS=${{ vars.MAX_ATTEMPTS }}" >> .env
                     echo "NODE_ENV=${{ vars.NODE_ENV }}" >> .env
