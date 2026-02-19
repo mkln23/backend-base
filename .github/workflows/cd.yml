@@ -43,7 +43,7 @@ jobs:
                     echo "MAX_ATTEMPTS=${{ vars.MAX_ATTEMPTS }}" >> .env
                     echo "NODE_ENV=${{ vars.NODE_ENV }}" >> .env
                     echo "REGION=${{ vars.REGION }}" >> .env
-                    echo "STAGE=${{ vars.STAGE }}" >> .env
+                    echo "STAGE=${{ env.STAGE }}" >> .env
 
             - name: 🌍 Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v4
