@@ -7,7 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "lint": "eslint src --ext .ts",
+        "lint:check": "eslint src --ext .ts",
         "lint:fix": "eslint src --ext .ts --fix",
         "prepare": "husky install",
         "deploy:check": "env-cmd -f .env.dev serverless info --stage dev --region us-east-1",
@@ -17,8 +17,12 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@aws-sdk/client-cost-explorer": "^3.992.0",
         "aws-lambda": "^1.0.7",
-        "express": "^5.2.1"
+        "dayjs": "^1.11.19",
+        "express": "^5.2.1",
+        "pino": "^10.3.1",
+        "yup": "^1.7.1"
     },
     "lint-staged": {
         "*.{ts,js}": [

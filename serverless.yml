@@ -5,6 +5,12 @@ frameworkVersion: '3'
 custom:
     stage: ${opt:stage, 'local'}
     region: ${opt:region, 'us-east-1'}
+    esbuild:
+        bundle: true
+        minify: false
+        sourcemap: true
+        target: node20
+        platform: node
 
 provider:
     name: aws
@@ -14,6 +20,7 @@ provider:
 
 plugins:
     - serverless-offline
+    - serverless-esbuild
 
 functions:
     hello:
